@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <FrameLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/navBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="15dp"
+            android:text="@string/registerTitle"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+    </FrameLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/emailEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:hint="@string/email_hint"
+            android:allowUndo="true"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:id="@+id/passwordEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="textPassword"
+            android:hint="@string/password_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:id="@+id/cpfEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="number"
+            android:hint="@string/cpf_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <Button
+            android:id="@+id/whyAskForCpfButton"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
+            android:text="@string/ask_cpf_link"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textSize="12sp"
+            android:textAlignment="viewStart" />
+
+        <EditText
+            android:id="@+id/birthDateEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="date"
+            android:hint="@string/birthdate_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:id="@+id/cellphoneEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="number"
+            android:hint="@string/cellphone_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:id="@+id/cityOfResidenceEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="text"
+            android:hint="@string/city_of_residence_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:id="@+id/usernameEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="text"
+            android:hint="@string/username_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+        <TextView
+            android:id="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/load_picture_title"
+            android:textColor="@color/colorPrimaryText"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/loadImageFromGallery"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/takeAPictureFromCamera"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/loadFromGalleryInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                android:textColor="@color/colorSecondaryText"
+                android:text="@string/gallery_hint"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/takeAPictureInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                android:text="@string/camera_hint"
+                android:textColor="@color/colorSecondaryText"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:text="@string/confirm_sign_up"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
