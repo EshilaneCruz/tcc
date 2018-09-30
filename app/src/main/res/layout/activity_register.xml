@@ -62,6 +62,32 @@
             android:textColor="@color/colorPrimaryText"/>
 
         <EditText
+            android:id="@+id/givenNameEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="text"
+            android:hint="@string/givenName_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:id="@+id/familyNameEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:allowUndo="true"
+            android:inputType="text"
+            android:hint="@string/familyName_hint"
+            android:textColorHint="@color/colorSecondaryText"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
             android:id="@+id/cpfEditTextRegister"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -126,87 +152,6 @@
             android:hint="@string/city_of_residence_hint"
             android:textColorHint="@color/colorSecondaryText"
             android:textColor="@color/colorPrimaryText"/>
-
-        <EditText
-            android:id="@+id/usernameEditTextRegister"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="text"
-            android:hint="@string/username_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
-        <TextView
-            android:id="@+id/profileImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@string/load_picture_title"
-            android:textColor="@color/colorPrimaryText"
-            android:textAlignment="center"
-            android:textSize="16sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/loadImageFromGallery"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:focusable="true"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/takeAPictureFromCamera"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:focusable="true"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_menu_camera" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/loadFromGalleryInformation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:focusable="true"
-                android:clickable="true"
-                android:textColor="@color/colorSecondaryText"
-                android:text="@string/gallery_hint"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/takeAPictureInformation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:focusable="true"
-                android:clickable="true"
-                android:text="@string/camera_hint"
-                android:textColor="@color/colorSecondaryText"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-        </LinearLayout>
 
         <Button
             android:id="@+id/registerButton"

@@ -12,18 +12,15 @@
 
     <!--String for Register-->
     <string name="registerTitle">Register a new account</string>
+    <string name="givenName_hint">Given Name</string>
+    <string name="familyName_hint">Family Name</string>
     <string name="cpf_hint">CPF</string>
     <string name="ask_cpf_link">Why do we ask for your CPF?</string>
     <string name="city_of_residence_hint">City of residence</string>
     <string name="cellphone_hint">Cellphone number</string>
     <string name="birthdate_hint">Birth Date</string>
-    <string name="username_hint">Username</string>
-    <string name="load_picture_title">Upload a profile picture</string>
-    <string name="camera_hint">Choose from gallery</string>
-    <string name="gallery_hint">Open Camera</string>
     <string name="confirm_sign_up">Register</string>
-    <string name="email_required">"Please fill your email address"</string>
-    <string name="password_required">"Please fill your password"</string>
-    <string name="registration_success">"You are registered!"</string>
-    <string name="registration_error">"An error has occurred!"</string>
+    <string name="toast_error_required">Required field not filled!</string>
+    <string name="registration_success">You are registered!</string>
+    <string name="registration_error">An error has occurred!</string>
 </resources>
