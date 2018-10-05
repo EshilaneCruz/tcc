@@ -9,4 +9,8 @@
         <item name="android:fontFamily">Montserrat</item>
     </style>
 
+    <style name="NavTextStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

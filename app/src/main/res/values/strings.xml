@@ -26,4 +26,12 @@
 
     <!--Strings for Main-->
     <string name="new_trip_button_text">New Trip</string>
+
+    <!--Strings for Navigation Drawer-->
+    <string name="nav_manage_trips_text">Manage your trips</string>
+    <string name="nav_update_profile_text">See and update your profile</string>
+    <string name="nav_meet_partners_text">Meet our partners</string>
+    <string name="nav_search_destinations_text">Search destinations</string>
+    <string name="nav_settings_text">Settings</string>
+    <string name="nav_logout_text">Logout</string>
 </resources>
