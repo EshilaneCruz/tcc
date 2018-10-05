@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".RegisterActivity">
 
     <FrameLayout
@@ -20,7 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center"
             android:layout_marginStart="15dp"
-            android:text="@string/registerTitle"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
 
@@ -35,70 +36,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <EditText
-            android:id="@+id/emailEditTextRegister"
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:hint="@string/email_hint"
-            android:allowUndo="true"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
-        <EditText
-            android:id="@+id/passwordEditTextRegister"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/emailEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/email_hint"
+                android:allowUndo="true"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="textPassword"
-            android:hint="@string/password_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
-        <EditText
-            android:id="@+id/givenNameEditTextRegister"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/passwordEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="textPassword"
+                android:hint="@string/password_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="text"
-            android:hint="@string/givenName_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
-        <EditText
-            android:id="@+id/familyNameEditTextRegister"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/givenNameEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="text"
+                android:hint="@string/givenName_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="text"
-            android:hint="@string/familyName_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
-        <EditText
-            android:id="@+id/cpfEditTextRegister"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/familyNameEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="text"
+                android:hint="@string/familyName_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="number"
-            android:hint="@string/cpf_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/cpfEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="number"
+                android:hint="@string/cpf_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/whyAskForCpfButton"
@@ -114,45 +141,60 @@
             android:textSize="12sp"
             android:textAlignment="viewStart" />
 
-        <EditText
-            android:id="@+id/birthDateEditTextRegister"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="date"
-            android:hint="@string/birthdate_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
-        <EditText
-            android:id="@+id/cellphoneEditTextRegister"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/birthDateEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="date"
+                android:hint="@string/birthdate_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="number"
-            android:hint="@string/cellphone_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
-        <EditText
-            android:id="@+id/cityOfResidenceEditTextRegister"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/cellphoneEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="number"
+                android:hint="@string/cellphone_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:allowUndo="true"
-            android:inputType="text"
-            android:hint="@string/city_of_residence_hint"
-            android:textColorHint="@color/colorSecondaryText"
-            android:textColor="@color/colorPrimaryText"/>
+            android:layout_marginEnd="15dp" >
 
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/cityOfResidenceEditTextRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowUndo="true"
+                android:inputType="text"
+                android:hint="@string/city_of_residence_hint"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText"/>
+        </android.support.design.widget.TextInputLayout>
+        
         <Button
             android:id="@+id/registerButton"
             android:layout_width="280dp"

@@ -11,8 +11,7 @@ import android.util.Log
 
 
 class RegisterActivity : AppCompatActivity() {
-    private val RESULT_LOAD_IMAGE = 1
-    val TAG = "RegisterActivity"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,19 +52,19 @@ class RegisterActivity : AppCompatActivity() {
         }else{
             Toast.makeText(this, R.string.toast_error_required, Toast.LENGTH_LONG).show()
             if(email.isBlank()){
-                emailEditTextRegister?.hint = "Email is required!"
+                emailEditTextRegister?.error = "Email is required!"
             }
             if(password.isBlank()){
-                passwordEditTextRegister?.hint = "Password is required!"
+                passwordEditTextRegister?.error = "Password is required!"
             }
             if(givenName.isBlank()){
-                givenNameEditTextRegister?.hint = "Given name is required!"
+                givenNameEditTextRegister?.error = "Given name is required!"
             }
             if(familyName.isBlank()){
-                familyNameEditTextRegister?.hint = "Family name is required!"
+                familyNameEditTextRegister?.error = "Family name is required!"
             }
             if(cpf.isBlank()){
-                cpfEditTextRegister?.hint = "CPF is required!"
+                cpfEditTextRegister?.error = "CPF is required!"
             }
         }
     }

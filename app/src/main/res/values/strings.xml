@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Beegoing</string>
 
-    <!--String for Login-->
+    <!--Strings for Login-->
     <string name="login_message_part1">KEEP CALM</string>
     <string name="login_message_part2">AND</string>
     <string name="login_message_part3">GO ON A TRIP</string>
@@ -10,7 +10,7 @@
     <string name="email_hint">Email address</string>
     <string name="password_hint">Password</string>
 
-    <!--String for Register-->
+    <!--Strings for Register-->
     <string name="registerTitle">Register a new account</string>
     <string name="givenName_hint">Given Name</string>
     <string name="familyName_hint">Family Name</string>
@@ -23,4 +23,7 @@
     <string name="toast_error_required">Required field not filled!</string>
     <string name="registration_success">You are registered!</string>
     <string name="registration_error">An error has occurred!</string>
+
+    <!--Strings for Main-->
+    <string name="new_trip_button_text">New Trip</string>
 </resources>
