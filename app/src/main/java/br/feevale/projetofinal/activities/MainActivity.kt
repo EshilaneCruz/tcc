@@ -1,11 +1,15 @@
-package br.feevale.projetofinal
+package br.feevale.projetofinal.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.view.MenuItem
 import android.widget.Toast
+import br.feevale.projetofinal.R
+import br.feevale.projetofinal.services.SharedPreferencesService
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -46,7 +50,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "Should see settings", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_logout -> {
-                Toast.makeText(this, "Should get out", Toast.LENGTH_SHORT).show()
+                FirebaseAuth.getInstance().signOut()
+                SharedPreferencesService.write("AuthenticatedUser", "OFF")
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }
             else -> {return false}
         }
