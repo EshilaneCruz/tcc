@@ -19,7 +19,13 @@
         </activity>
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.RegisterActivity" />
-        <activity android:name=".activities.StartTripActivity"></activity>
+        <activity android:name=".activities.StartTripActivity" />
+        <activity android:name=".activities.PresentTripActivity" />
+        <activity android:name=".activities.PresentNewsPromoActivity" />
+        <activity android:name=".activities.PresentPartnersActivity" />
+        <activity android:name=".activities.PresentDestinationsActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.SettingsActivity"></activity>
     </application>
 
 </manifest>

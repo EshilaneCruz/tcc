@@ -20,8 +20,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_dehaze)
-
         navigationView.setNavigationItemSelectedListener (this)
+        new_trip_button.setOnClickListener { goToStartTrip() }
+        action_manage_trips_main.setOnClickListener { goToPresentTrips() }
+        action_news_main.setOnClickListener { goToPresentNews() }
+        action_search_partners_main.setOnClickListener { goToPresentPartners() }
+        action_search_destinations_main.setOnClickListener { goToPresentDestinations() }
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -35,19 +39,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.nav_manage_trips -> {
-                Toast.makeText(this, "Should see trips", Toast.LENGTH_SHORT).show()
+                goToPresentTrips()
             }
             R.id.nav_update_profile -> {
-                Toast.makeText(this, "Should see profile", Toast.LENGTH_SHORT).show()
+                goToProfile()
             }
             R.id.nav_meet_partners -> {
-                Toast.makeText(this, "Should see partners", Toast.LENGTH_SHORT).show()
+                goToPresentPartners()
             }
             R.id.nav_search_destinations -> {
-                Toast.makeText(this, "Should see destinations", Toast.LENGTH_SHORT).show()
+                goToPresentDestinations()
             }
             R.id.nav_settings -> {
-                Toast.makeText(this, "Should see settings", Toast.LENGTH_SHORT).show()
+                goToSettings()
             }
             R.id.nav_logout -> {
                 FirebaseAuth.getInstance().signOut()
@@ -59,5 +63,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawerLayout.closeDrawers()
         return true
+    }
+    private fun goToStartTrip(){
+        startActivity( Intent(this, StartTripActivity::class.java))
+    }
+    private fun goToPresentTrips(){
+        startActivity( Intent(this, PresentTripActivity::class.java))
+    }
+    private fun goToPresentNews(){
+        startActivity( Intent(this, PresentNewsPromoActivity::class.java))
+    }
+    private fun goToPresentPartners(){
+        startActivity( Intent(this, PresentPartnersActivity::class.java))
+    }
+    private fun goToPresentDestinations(){
+        startActivity( Intent(this, PresentDestinationsActivity::class.java))
+    }
+    private fun goToProfile(){
+        startActivity( Intent(this, ProfileActivity::class.java))
+    }
+    private fun goToSettings(){
+        startActivity( Intent(this, SettingsActivity::class.java))
     }
 }

@@ -26,6 +26,10 @@
 
     <!--Strings for Main-->
     <string name="new_trip_button_text">New Trip</string>
+    <string name="trips_menu_title">Trips</string>
+    <string name="news_menu_title">News &amp; Promos</string>
+    <string name="partners_menu_title">Partners</string>
+    <string name="destinations_menu_title">Destinations</string>
 
     <!--Strings for Navigation Drawer-->
     <string name="nav_manage_trips_text">Manage your trips</string>

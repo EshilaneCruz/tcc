@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.StartTripActivity">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.ProfileActivity">
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -14,7 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="This should start a trip!"
+        android:text="This should present user profile"
         android:textSize="20sp"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
