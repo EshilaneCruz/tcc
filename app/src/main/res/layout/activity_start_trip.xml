@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".activities.StartTripActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="This should start a trip!"
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/navBarTripAdd"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/navBarTripAddTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:text="@string/registerTrip_title"/>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp" >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tripNameAddTrip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/tripName_hint"
+                android:allowUndo="true"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textColor="@color/colorPrimaryText" />
+        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
+            <ImageButton
+                android:id="@+id/pickStartDateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_calendar"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="15dp"/>
+            <TextView
+                android:id="@+id/pickStartDateLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startDate_hint"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
+            <ImageButton
+                android:id="@+id/pickEndDateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_calendar"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="15dp"/>
+            <TextView
+                android:id="@+id/pickEndDateLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/endDate_hint"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"/>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/addTripButton"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:text="@string/addTripButton_text"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

@@ -38,4 +38,15 @@
     <string name="nav_search_destinations_text">Search destinations</string>
     <string name="nav_settings_text">Settings</string>
     <string name="nav_logout_text">Logout</string>
+
+    <!--Strings for Register Trip-->
+    <string name="registerTrip_title">Start a new trip</string>
+    <string name="tripName_hint">Set a name for your trip</string>
+    <string name="addTripButton_text">add</string>
+    <string name="startDate_hint">Select start date</string>
+    <string name="endDate_hint">Select end date</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
