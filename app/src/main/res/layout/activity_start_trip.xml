@@ -25,80 +25,100 @@
             android:textSize="24sp"
             android:text="@string/registerTrip_title"/>
     </FrameLayout>
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/add_trip_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <android.support.design.widget.TextInputLayout
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp" >
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/tripNameAddTrip"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/tripName_hint"
-                android:allowUndo="true"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/colorSecondaryText"
-                android:textColor="@color/colorPrimaryText" />
-        </android.support.design.widget.TextInputLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="15dp">
-            <ImageButton
-                android:id="@+id/pickStartDateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_calendar"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginStart="15dp"/>
-            <TextView
-                android:id="@+id/pickStartDateLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/startDate_hint"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="15dp">
-            <ImageButton
-                android:id="@+id/pickEndDateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_calendar"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginStart="15dp"/>
-            <TextView
-                android:id="@+id/pickEndDateLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/endDate_hint"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15dp"/>
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp" >
 
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tripNameAddTrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/tripName_hint"
+                    android:allowUndo="true"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/colorSecondaryText"
+                    android:textColor="@color/colorPrimaryText" />
+            </android.support.design.widget.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
+                <TextView
+                    android:id="@+id/start_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/startDate_hint" />
+
+                <CalendarView
+                    android:id="@+id/start_date_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
+                <TextView
+                    android:id="@+id/end_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/endDate_hint" />
+
+                <CalendarView
+                    android:id="@+id/end_date_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp" >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tripBudgetAddTrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/tripBudget_hint"
+                    android:allowUndo="true"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/colorSecondaryText"
+                    android:textColor="@color/colorPrimaryText" />
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:id="@+id/addTripButton"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="@string/addTripButton_text"
+                android:layout_gravity="center"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/addTripButton"
-            android:layout_width="280dp"
-            android:layout_height="50dp"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:text="@string/addTripButton_text"
-            android:layout_gravity="center"/>
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
