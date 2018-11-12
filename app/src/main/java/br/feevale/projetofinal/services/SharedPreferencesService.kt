@@ -11,5 +11,12 @@ object SharedPreferencesService {
         editor.apply()
     }
 
+    fun write(key: String, value: Long) {
+        val editor = sharedPreferences.edit()
+        editor.putLong(key, value)
+        editor.apply()
+    }
+
     fun retrieveString(key: String) = sharedPreferences.getString(key, "")
+    fun retrieveLong(key: String) = sharedPreferences.getLong(key, 0)
 }
