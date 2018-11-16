@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
                 SharedPreferencesService.write("AuthenticatedUser", "ON")
                 startActivity(Intent(this, MainActivity::class.java))
             }else{
-                Toast.makeText(this, "Falha no login!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Login failed!", Toast.LENGTH_LONG).show()
             }
         }
     }

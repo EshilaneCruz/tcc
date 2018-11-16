@@ -53,44 +53,46 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="15dp">
-                <TextView
-                    android:id="@+id/start_date_label"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/start_date_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="@string/startDate_hint" />
+                    android:src="@drawable/ic_calendar"
+                    android:clickable="true"
+                    android:focusable="true" />
 
-                <CalendarView
-                    android:id="@+id/start_date_calendar"
+                <EditText
+                    android:id="@+id/start_date_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:hint="@string/startDate_hint"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="15dp">
-                <TextView
-                    android:id="@+id/end_date_label"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/end_date_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="@string/endDate_hint" />
+                    android:src="@drawable/ic_calendar"
+                    android:clickable="true"
+                    android:focusable="true"/>
 
-                <CalendarView
-                    android:id="@+id/end_date_calendar"
+                <EditText
+                    android:id="@+id/end_date_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:hint="@string/endDate_hint"/>
             </LinearLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
