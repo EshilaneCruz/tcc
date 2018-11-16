@@ -107,7 +107,7 @@
                     android:layout_height="match_parent"
                     android:hint="@string/tripBudget_hint"
                     android:allowUndo="true"
-                    android:inputType="textEmailAddress"
+                    android:inputType="number"
                     android:textColorHint="@color/colorSecondaryText"
                     android:textColor="@color/colorPrimaryText" />
             </android.support.design.widget.TextInputLayout>
