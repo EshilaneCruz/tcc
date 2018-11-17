@@ -48,8 +48,8 @@ class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener
                     "budget" to budget,
                     "owner" to firebaseAuth.currentUser?.email.toString())
             FirebaseDatabaseService.saveNewTrip(tripInformation)
-            startActivity(Intent(this, EditTripActivity::class.java))
-            this.finish()
+            startActivity(Intent(this, EditTripActivity::class.java).putExtra("tripId", FirebaseDatabaseService.getLastAddedTripId()))
+            //this.finish()
         }
     }
 
