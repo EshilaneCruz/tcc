@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import br.feevale.projetofinal.R
 import br.feevale.projetofinal.dialogs.DatePickerFragment
 import br.feevale.projetofinal.services.FirebaseDatabaseService
@@ -47,9 +48,8 @@ class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener
                     "enddate" to endDate,
                     "budget" to budget,
                     "owner" to firebaseAuth.currentUser?.email.toString())
-            FirebaseDatabaseService.saveNewTrip(tripInformation)
-            startActivity(Intent(this, EditTripActivity::class.java).putExtra("tripId", FirebaseDatabaseService.getLastAddedTripId()))
-            //this.finish()
+            val tripId = FirebaseDatabaseService.firestoreDB.collection("trip").document()
+            tripId.set(tripInformation).addOnCompleteListener{ startActivity(Intent(this, EditTripActivity::class.java).putExtra("tripId", tripId.id))}
         }
     }
 
