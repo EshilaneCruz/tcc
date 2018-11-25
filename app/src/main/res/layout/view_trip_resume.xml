@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tripNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="TRIP NAME"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tripPeriodView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tripNameView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:text="MON DD - MON DD"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/goToTripPageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tripPeriodView"
+        android:layout_alignEnd="@+id/tripPeriodView"
+        android:text="Ver Detalhes" />
+</RelativeLayout>

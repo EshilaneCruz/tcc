@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="$ 000.00"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorSecondaryText"
                     android:textSize="18sp" />
             </LinearLayout>
             <LinearLayout
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="$ 000.00"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@android:color/holo_green_dark"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>

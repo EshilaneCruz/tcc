@@ -8,6 +8,7 @@ import android.support.v4.view.GravityCompat
 import android.view.MenuItem
 import android.widget.Toast
 import br.feevale.projetofinal.R
+import br.feevale.projetofinal.models.TripResume
 import br.feevale.projetofinal.services.SharedPreferencesService
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
