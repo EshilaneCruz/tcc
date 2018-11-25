@@ -27,7 +27,8 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
     }
 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
-        val date = "$day-$month-$year"
+        var monthSet = month+1
+        val date = "$day-$monthSet-$year"
         SharedPreferencesService.write("DatePickerData",date)
     }
 

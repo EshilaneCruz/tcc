@@ -4,11 +4,12 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import br.feevale.projetofinal.R
 import br.feevale.projetofinal.dialogs.DatePickerFragment
+import br.feevale.projetofinal.services.FirebaseDatabaseService
 import br.feevale.projetofinal.services.SharedPreferencesService
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_start_trip.*
 import java.text.SimpleDateFormat
 
@@ -16,7 +17,6 @@ import java.text.SimpleDateFormat
 class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener {
 
     val firebaseAuth = FirebaseAuth.getInstance()
-    val firestoreDB = FirebaseFirestore.getInstance()
     var startDate : String = ""
     var endDate : String = ""
     var startDateInMillis: Long = 0
@@ -48,7 +48,8 @@ class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener
                     "enddate" to endDate,
                     "budget" to budget,
                     "owner" to firebaseAuth.currentUser?.email.toString())
-            firestoreDB.collection("trip").document().set(tripInformation).addOnSuccessListener { startActivity(Intent(this, MainActivity::class.java)) }
+            val tripId = FirebaseDatabaseService.firestoreDB.collection("trip").document()
+            tripId.set(tripInformation).addOnCompleteListener{ startActivity(Intent(this, EditTripActivity::class.java).putExtra("tripId", tripId.id))}
         }
     }
 

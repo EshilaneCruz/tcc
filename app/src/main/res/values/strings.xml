@@ -47,8 +47,10 @@
     <string name="endDate_hint">Select end date</string>
     <string name="tripBudget_hint">Budget</string>
 
+    <!--Strings for Edit Trip-->
+    <string name="editTrip_title">Trip details</string>
+    <string name="listTrip_title">Trips</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
