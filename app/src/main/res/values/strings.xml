@@ -50,7 +50,7 @@
     <!--Strings for Edit Trip-->
     <string name="editTrip_title">Trip details</string>
     <string name="listTrip_title">Trips</string>
-
+    <string name="edit_trip_button_hint">Tap to edit your trip details, as name, budget, dates and events.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
