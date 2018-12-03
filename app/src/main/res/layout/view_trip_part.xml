@@ -6,20 +6,19 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/cityView"
+        android:id="@+id/cityPartView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:text="CITY FROM - CITY TO"
         android:textColor="@color/colorPrimaryText"
         android:textSize="18sp" />
     <TextView
-        android:id="@+id/tripPeriodView"
+        android:id="@+id/tripPartPeriodView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cityView"
+        android:layout_below="@+id/cityPartView"
         android:layout_marginStart="16dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="16dp"
@@ -34,7 +33,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:text="Preparation Itens"
-        android:layout_below="@+id/tripPeriodView"
+        android:layout_below="@+id/tripPartPeriodView"
         android:textColor="@color/colorPrimaryText"
         android:textSize="18sp" />
     <LinearLayout
@@ -55,6 +54,7 @@
                 android:textColor="@color/colorSecondaryText"
                 android:textSize="12sp"/>
             <TextView
+                android:id="@+id/plannedItensView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -75,6 +75,7 @@
                 android:textColor="@color/colorSecondaryText"
                 android:textSize="12sp"/>
             <TextView
+                android:id="@+id/okItensView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -99,7 +100,7 @@
             android:textColor="@color/colorSecondaryText"
             android:textSize="18sp" />
         <TextView
-            android:id="@+id/totalCostView"
+            android:id="@+id/partialCostView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

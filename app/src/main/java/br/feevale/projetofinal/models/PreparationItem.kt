@@ -1,6 +1,6 @@
 package br.feevale.projetofinal.models
 
-class PreparationItens {
+class PreparationItem {
     val prepItenName: String = ""
     val status: Boolean = false
     val cost: Double = 0.0

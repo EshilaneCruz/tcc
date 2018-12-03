@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activities.AddTripPartActivity">
+
+    <FrameLayout
+        android:id="@+id/navBarTripAdd"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/navBarTripAddTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:text="@string/addTripPart_title"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/add_trip_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/destination_label"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryText"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/destinationSearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arrival_date_label"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryText"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageButton
+                    android:id="@+id/arrival_date_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_calendar"
+                    android:clickable="true"
+                    android:focusable="true" />
+                <EditText
+                    android:id="@+id/arrival_date_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/departure_date_label"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryText"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageButton
+                    android:id="@+id/departure_date_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_calendar"
+                    android:clickable="true"
+                    android:focusable="true" />
+                <EditText
+                    android:id="@+id/departure_date_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prep_items_label"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryText"/>
+            <ListView
+                android:id="@+id/list_prep_items_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
