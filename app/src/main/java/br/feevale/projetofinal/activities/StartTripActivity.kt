@@ -49,7 +49,7 @@ class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener
                     "budget" to budget,
                     "owner" to firebaseAuth.currentUser?.email.toString())
             val tripId = FirebaseDatabaseService.firestoreDB.collection("trip").document()
-            tripId.set(tripInformation).addOnCompleteListener{ startActivity(Intent(this, EditTripActivity::class.java).putExtra("tripId", tripId.id))}
+            tripId.set(tripInformation).addOnCompleteListener{ startActivity(Intent(this, TripManagementActivity::class.java).putExtra("tripId", tripId.id))}
         }
     }
 
