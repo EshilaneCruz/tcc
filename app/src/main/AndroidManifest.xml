@@ -29,6 +29,7 @@
         <activity android:name=".activities.TripManagementActivity" />
         <activity android:name=".activities.EditTripActivity" />
         <activity android:name=".activities.AddTripPartActivity" />
+        <activity android:name=".activities.EditPartActivity"></activity>
     </application>
 
 </manifest>

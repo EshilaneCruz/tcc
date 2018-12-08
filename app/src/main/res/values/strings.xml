@@ -52,6 +52,7 @@
     <string name="listTrip_title">Trips</string>
     <string name="edit_trip_button_hint">Tap to edit your trip details, as name, budget, dates and events.</string>
     <string name="add_trip_part_button">ADD PART</string>
+    <string name="commit_changes_to_trip_part_button">CONFIRM EDIT</string>
     <string name="add_trip_part_button_hint">Tap to add a new part to your trip.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

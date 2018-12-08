@@ -90,6 +90,7 @@ public class TripManagementActivity extends AppCompatActivity{
                             tripPartList = new ArrayList<>();
                             for(DocumentSnapshot document : task.getResult()){
                                 TripPart part = new TripPart(
+                                        document.getId(),
                                         document.get("arrivaldate").toString(),
                                         document.get("departuredate").toString(),
                                         document.get("destination").toString(),
@@ -146,6 +147,17 @@ public class TripManagementActivity extends AppCompatActivity{
             TextView okItensView = result.findViewById( R.id.okItensView );
 
             TextView costPrepItemView = result.findViewById( R.id.partialCostView );
+
+            ImageButton partEditButton = result.findViewById(R.id.partEditButton);
+
+            partEditButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), EditPartActivity.class);
+                    intent.putExtra("partId", tripPart.getPartId());
+                    startActivity(intent);
+                }
+            });
 
             return result;
         }

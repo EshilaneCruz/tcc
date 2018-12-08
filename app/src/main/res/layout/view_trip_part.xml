@@ -7,13 +7,22 @@
 
     <TextView
         android:id="@+id/cityPartView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="CITY FROM - CITY TO"
         android:textColor="@color/colorPrimaryText"
         android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/partEditButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_mode_edit_black"
+        android:background="@android:color/transparent"
+        android:layout_toEndOf="@+id/cityPartView"
+        android:contentDescription="Edit part information" />
     <TextView
         android:id="@+id/tripPartPeriodView"
         android:layout_width="match_parent"

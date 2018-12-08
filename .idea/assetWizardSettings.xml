@@ -82,7 +82,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/toggle/ic_check_box_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -92,8 +92,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ff5252" />
-                            <entry key="outputName" value="ic_add_black_24dp" />
+                            <entry key="color" value="bdbdbd" />
+                            <entry key="outputName" value="ic_check_box_black_24dp" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\Marcelo\Desktop\line.svg" />
                           </map>

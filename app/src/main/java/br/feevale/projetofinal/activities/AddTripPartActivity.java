@@ -3,7 +3,6 @@ package br.feevale.projetofinal.activities;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -22,10 +20,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,10 +37,10 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
     private FirebaseFirestore db;
     private ArrayList<String> destinations = new ArrayList<>();
     private String tripId = "";
-    EditText startDateView;
-    EditText endDateView;
-    String startDate;
-    String endDate;
+    EditText arrivalDateView;
+    EditText departureDateView;
+    String arrivalDate;
+    String departureDate;
     DateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
 
     @Override
@@ -52,8 +50,8 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         db = FirebaseFirestore.getInstance();
         tripId = this.getIntent().getStringExtra("tripId");
         loadCities();
-        startDateView = findViewById(R.id.arrival_date_view);
-        endDateView = findViewById(R.id.departure_date_view);
+        arrivalDateView = findViewById(R.id.arrival_date_view);
+        departureDateView = findViewById(R.id.departure_date_view);
         ImageButton start_date_button = findViewById(R.id.arrival_date_button);
         start_date_button.setOnClickListener(
                 new View.OnClickListener() {
@@ -99,54 +97,89 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        String collectionPath = "trip/" + tripId;
+        String collectionPathTripPart = "trip/" + tripId + "/tripparts";
+        //final String partId = db.collection(collectionPathTripPart).document().getId();
+        //final String collectionPathPrepItems = collectionPathTripPart + "/" + partId;
         AutoCompleteTextView city = findViewById(R.id.destinationSearchBar);
-        EditText arrivalDate = findViewById(R.id.arrival_date_view);
-        EditText departureDate = findViewById(R.id.departure_date_view);
         CheckBox visaCheck = findViewById(R.id.visaCheck);
         CheckBox hostingCheck = findViewById(R.id.hostingCheck);
         CheckBox transportCheck = findViewById(R.id.transportCheck);
         CheckBox luggageCheck = findViewById(R.id.luggageCheck);
         CheckBox flightsCheck = findViewById(R.id.flightsCheck);
         CheckBox restaurantCheck = findViewById(R.id.restaurantCheck);
-        List<PreparationItem> items = new ArrayList<>();
+        ArrayList<PreparationItem> items = new ArrayList<>();
         Map<String, Object> tripPart = new HashMap<>();
-        tripPart.put("destination", city.getText());
-        tripPart.put("arrivaldate", arrivalDate.getText());
-        tripPart.put("departuredate", departureDate.getText());
-
+        tripPart.put("destination", city.getText().toString());
+        tripPart.put("arrivaldate", arrivalDateView.getText().toString());
+        tripPart.put("departuredate", departureDateView.getText().toString());
+        Map<String, Object> prepItemVisa = new HashMap<>();
+        prepItemVisa.put("cost", "0");
+        prepItemVisa.put("status", false);
+        prepItemVisa.put("name", visaCheck.getText().toString());
         if(visaCheck.isChecked()){
-            items.add(new PreparationItem(visaCheck.getText().toString(), false, "0"));
+            prepItemVisa.put("enabled", true);
+        }else{
+            prepItemVisa.put("enabled", false);
         }
+        Map<String, Object> prepItemHosting = new HashMap<>();
+        prepItemHosting.put("cost", "0");
+        prepItemHosting.put("status", false);
+        prepItemHosting.put("name", visaCheck.getText().toString());
         if(hostingCheck.isChecked()){
-            items.add(new PreparationItem(hostingCheck.getText().toString(), false, "0"));
+            prepItemHosting.put("enabled", true);
+        }else{
+            prepItemHosting.put("enabled", false);
         }
+        Map<String, Object> prepItemTransport = new HashMap<>();
+        prepItemTransport.put("cost", "0");
+        prepItemTransport.put("status", false);
+        prepItemTransport.put("name", visaCheck.getText().toString());
         if(transportCheck.isChecked()){
-            items.add(new PreparationItem(transportCheck.getText().toString(), false, "0"));
+            prepItemTransport.put("enabled", true);
+        }else{
+            prepItemTransport.put("enabled", false);
         }
+        Map<String, Object> prepItemLuggage = new HashMap<>();
+        prepItemLuggage.put("cost", "0");
+        prepItemLuggage.put("status", false);
+        prepItemLuggage.put("name", visaCheck.getText().toString());
         if(luggageCheck.isChecked()){
-            items.add(new PreparationItem(luggageCheck.getText().toString(), false, "0"));
+            prepItemLuggage.put("enabled", true);
+        }else{
+            prepItemLuggage.put("enabled", false);
         }
+        Map<String, Object> prepItemFlights = new HashMap<>();
+        prepItemFlights.put("cost", "0");
+        prepItemFlights.put("status", false);
+        prepItemFlights.put("name", visaCheck.getText().toString());
         if(flightsCheck.isChecked()){
-            items.add(new PreparationItem(flightsCheck.getText().toString(), false, "0"));
+            prepItemFlights.put("enabled", true);
+        }else{
+            prepItemFlights.put("enabled", false);
         }
+        Map<String, Object> prepItemRestaurant = new HashMap<>();
+        prepItemRestaurant.put("cost", "0");
+        prepItemRestaurant.put("status", false);
+        prepItemRestaurant.put("name", visaCheck.getText().toString());
         if(restaurantCheck.isChecked()){
-            items.add(new PreparationItem(restaurantCheck.getText().toString(), false, "0"));
+            prepItemRestaurant.put("enabled", true);
+        }else{
+            prepItemRestaurant.put("enabled", false);
         }
 
-        tripPart.put("prepitens", items);
+        tripPart.put("prepitens", Arrays.asList(prepItemVisa, prepItemHosting, prepItemTransport, prepItemLuggage, prepItemFlights, prepItemRestaurant));
 
-        db.collection(collectionPath).add(tripPart).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        db.collection(collectionPathTripPart).add(tripPart).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
-                getParentActivityIntent();
+                startActivity(getParentActivityIntent());
             }
         });
     }
 
     @Override
     public void onDismiss(@Nullable DialogInterface dialog) {
-        if(startDateView.getText().toString().isEmpty()){
+        if(arrivalDateView.getText().toString().isEmpty()){
             setArrivalDate();
         }else{
             setDepartureDate();
@@ -154,14 +187,12 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void setArrivalDate() {
-        startDate = SharedPreferencesService.retrieveString("DatePickerData");
-        EditText arrivalDateView = findViewById(R.id.arrival_date_view);
-        arrivalDateView.setText(startDate);
+        arrivalDate = SharedPreferencesService.retrieveString("DatePickerData");
+        arrivalDateView.setText(arrivalDate);
     }
 
     private void setDepartureDate() {
-        endDate = SharedPreferencesService.retrieveString("DatePickerData");
-        EditText departureDateView = findViewById(R.id.departure_date_view);
-        departureDateView.setText(endDate);
+        departureDate = SharedPreferencesService.retrieveString("DatePickerData");
+        departureDateView.setText(departureDate);
     }
 }
