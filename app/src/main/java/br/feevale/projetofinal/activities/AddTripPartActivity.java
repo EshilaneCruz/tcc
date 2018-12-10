@@ -1,6 +1,7 @@
 package br.feevale.projetofinal.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
@@ -41,7 +42,6 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
     EditText departureDateView;
     String arrivalDate;
     String departureDate;
-    DateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,65 +114,65 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         tripPart.put("departuredate", departureDateView.getText().toString());
         Map<String, Object> prepItemVisa = new HashMap<>();
         prepItemVisa.put("cost", "0");
-        prepItemVisa.put("status", false);
+        prepItemVisa.put("status", "false");
         prepItemVisa.put("name", visaCheck.getText().toString());
         if(visaCheck.isChecked()){
-            prepItemVisa.put("enabled", true);
+            prepItemVisa.put("enabled", "true");
         }else{
-            prepItemVisa.put("enabled", false);
+            prepItemVisa.put("enabled", "false");
         }
         Map<String, Object> prepItemHosting = new HashMap<>();
         prepItemHosting.put("cost", "0");
-        prepItemHosting.put("status", false);
+        prepItemHosting.put("status", "false");
         prepItemHosting.put("name", visaCheck.getText().toString());
         if(hostingCheck.isChecked()){
-            prepItemHosting.put("enabled", true);
+            prepItemHosting.put("enabled", "true");
         }else{
-            prepItemHosting.put("enabled", false);
+            prepItemHosting.put("enabled", "false");
         }
         Map<String, Object> prepItemTransport = new HashMap<>();
         prepItemTransport.put("cost", "0");
-        prepItemTransport.put("status", false);
+        prepItemTransport.put("status", "false");
         prepItemTransport.put("name", visaCheck.getText().toString());
         if(transportCheck.isChecked()){
-            prepItemTransport.put("enabled", true);
+            prepItemTransport.put("enabled", "true");
         }else{
-            prepItemTransport.put("enabled", false);
+            prepItemTransport.put("enabled", "false");
         }
         Map<String, Object> prepItemLuggage = new HashMap<>();
         prepItemLuggage.put("cost", "0");
-        prepItemLuggage.put("status", false);
+        prepItemLuggage.put("status", "false");
         prepItemLuggage.put("name", visaCheck.getText().toString());
         if(luggageCheck.isChecked()){
-            prepItemLuggage.put("enabled", true);
+            prepItemLuggage.put("enabled", "true");
         }else{
-            prepItemLuggage.put("enabled", false);
+            prepItemLuggage.put("enabled", "false");
         }
         Map<String, Object> prepItemFlights = new HashMap<>();
         prepItemFlights.put("cost", "0");
-        prepItemFlights.put("status", false);
+        prepItemFlights.put("status", "false");
         prepItemFlights.put("name", visaCheck.getText().toString());
         if(flightsCheck.isChecked()){
-            prepItemFlights.put("enabled", true);
+            prepItemFlights.put("enabled", "true");
         }else{
-            prepItemFlights.put("enabled", false);
+            prepItemFlights.put("enabled", "false");
         }
         Map<String, Object> prepItemRestaurant = new HashMap<>();
         prepItemRestaurant.put("cost", "0");
-        prepItemRestaurant.put("status", false);
+        prepItemRestaurant.put("status", "false");
         prepItemRestaurant.put("name", visaCheck.getText().toString());
         if(restaurantCheck.isChecked()){
-            prepItemRestaurant.put("enabled", true);
+            prepItemRestaurant.put("enabled", "true");
         }else{
-            prepItemRestaurant.put("enabled", false);
+            prepItemRestaurant.put("enabled", "false");
         }
 
-        tripPart.put("prepitens", Arrays.asList(prepItemVisa, prepItemHosting, prepItemTransport, prepItemLuggage, prepItemFlights, prepItemRestaurant));
+        tripPart.put("prepitems", Arrays.asList(prepItemVisa, prepItemHosting, prepItemTransport, prepItemLuggage, prepItemFlights, prepItemRestaurant));
 
         db.collection(collectionPathTripPart).add(tripPart).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
-                startActivity(getParentActivityIntent());
+                finish();
             }
         });
     }

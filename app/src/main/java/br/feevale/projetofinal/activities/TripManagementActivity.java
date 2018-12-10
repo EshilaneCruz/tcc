@@ -30,13 +30,14 @@ public class TripManagementActivity extends AppCompatActivity{
     private ArrayList<TripPart> tripPartList;
     private FirebaseFirestore db;
     private Trip trip = new Trip();
+    String tripId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_detail);
         db = FirebaseFirestore.getInstance();
-        final String tripId = this.getIntent().getStringExtra("tripId");
+        tripId = this.getIntent().getStringExtra("tripId");
         loadUserTrip(tripId);
         ImageButton editTripDetailsButton = findViewById(R.id.editTripDetailsButton);
         editTripDetailsButton.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +156,7 @@ public class TripManagementActivity extends AppCompatActivity{
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(), EditPartActivity.class);
                     intent.putExtra("partId", tripPart.getPartId());
+                    intent.putExtra("tripId", tripId);
                     startActivity(intent);
                 }
             });
