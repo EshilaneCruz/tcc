@@ -21,7 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Objects;
-
 import br.feevale.projetofinal.R;
 import br.feevale.projetofinal.models.TripResume;
 import br.feevale.projetofinal.utils.UtilMethods;
@@ -97,7 +96,7 @@ public class PresentTripActivity extends AppCompatActivity{
             goToTripPageBt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), EditTripActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), TripManagementActivity.class);
                     intent.putExtra("tripId", tripResume.getTripId());
                     startActivity(intent);
                 }
