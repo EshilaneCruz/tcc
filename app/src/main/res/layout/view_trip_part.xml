@@ -11,18 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="CITY FROM - CITY TO"
+        android:text="CITY"
         android:textColor="@color/colorPrimaryText"
         android:textSize="18sp" />
 
-    <ImageButton
-        android:id="@+id/partEditButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_mode_edit_black"
-        android:background="@android:color/transparent"
-        android:layout_toEndOf="@+id/cityPartView"
-        android:contentDescription="Edit part information" />
     <TextView
         android:id="@+id/tripPartPeriodView"
         android:layout_width="match_parent"
@@ -32,89 +24,35 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="16dp"
         android:text="MON DD - MON DD"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp" />
-    <TextView
-        android:id="@+id/prepTitleView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:text="Preparation Itens"
-        android:layout_below="@+id/tripPartPeriodView"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="18sp" />
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/partialActionsLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/prepTitleView"
-        android:id="@+id/prep_itens_view">
-        <LinearLayout
+        android:layout_margin="16dp"
+        android:layout_below="@+id/tripPartPeriodView">
+        <ImageButton
+            android:id="@+id/partEditButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Planned"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="12sp"/>
-            <TextView
-                android:id="@+id/plannedItensView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="00"
-                android:textAlignment="center"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="12sp"/>
-        </LinearLayout>
-        <LinearLayout
+            android:src="@drawable/ic_checklist"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="16dp" />
+        <ImageButton
+            android:id="@+id/eventsEditButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Ok"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="12sp"/>
-            <TextView
-                android:id="@+id/okItensView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="00"
-                android:textAlignment="center"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="12sp"/>
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/partialCostLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/prep_itens_view">
-        <TextView
+            android:src="@drawable/ic_events"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="16dp" />
+        <ImageButton
+            android:id="@+id/deletePartButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="5dp"
-            android:text="Cost - "
-            android:textColor="@color/colorSecondaryText"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/partialCostView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="$ 000.00"
-            android:textColor="@color/colorSecondaryText"
-            android:textSize="18sp" />
+            android:src="@drawable/ic_rubbish_bin"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="16dp" />
     </LinearLayout>
 </RelativeLayout>

@@ -63,7 +63,7 @@
                     android:id="@+id/arrival_date_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_calendar"
+                    android:src="@drawable/ic_events"
                     android:clickable="true"
                     android:focusable="true" />
                 <EditText
@@ -87,7 +87,7 @@
                     android:id="@+id/departure_date_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_calendar"
+                    android:src="@drawable/ic_events"
                     android:clickable="true"
                     android:focusable="true" />
                 <EditText

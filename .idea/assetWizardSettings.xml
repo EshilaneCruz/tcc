@@ -92,10 +92,13 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="bdbdbd" />
-                            <entry key="outputName" value="ic_check_box_black_24dp" />
+                            <entry key="height" value="36" />
+                            <entry key="outputName" value="ic_rubbish_bin" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Marcelo\Desktop\line.svg" />
+                            <entry key="sourceFile" value="C:\Users\cruz.eshilane\Desktop\rubbish-bin.svg" />
+                            <entry key="width" value="36" />
                           </map>
                         </option>
                       </PersistentState>

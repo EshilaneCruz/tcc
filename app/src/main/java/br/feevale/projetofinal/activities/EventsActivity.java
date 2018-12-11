@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import br.feevale.projetofinal.R;
 
-public class EditTripActivity extends AppCompatActivity {
+public class EventsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

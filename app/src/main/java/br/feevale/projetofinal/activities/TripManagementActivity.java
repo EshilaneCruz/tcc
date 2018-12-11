@@ -43,7 +43,7 @@ public class TripManagementActivity extends AppCompatActivity{
         editTripDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), EditTripActivity.class);
+                Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
                 intent.putExtra("tripId", tripId);
                 startActivity(intent);
             }
@@ -143,13 +143,9 @@ public class TripManagementActivity extends AppCompatActivity{
             String formattedDate = UtilMethods.formatDate(tripPart.getPartStartDate()) + " - " + UtilMethods.formatDate(tripPart.getPartEndDate());
             date.setText( formattedDate );
 
-            TextView plannedItensView = result.findViewById( R.id.plannedItensView );
-
-            TextView okItensView = result.findViewById( R.id.okItensView );
-
-            TextView costPrepItemView = result.findViewById( R.id.partialCostView );
-
             ImageButton partEditButton = result.findViewById(R.id.partEditButton);
+            ImageButton eventsEditButton = result.findViewById(R.id.eventsEditButton);
+            ImageButton deleteButton = result.findViewById(R.id.deletePartButton);
 
             partEditButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -158,6 +154,21 @@ public class TripManagementActivity extends AppCompatActivity{
                     intent.putExtra("partId", tripPart.getPartId());
                     intent.putExtra("tripId", tripId);
                     startActivity(intent);
+                }
+            });
+            eventsEditButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
+                    intent.putExtra("partId", tripPart.getPartId());
+                    intent.putExtra("tripId", tripId);
+                    startActivity(intent);
+                }
+            });
+            deleteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //TODO DELETE PART FROM FIRESTORE
                 }
             });
 
