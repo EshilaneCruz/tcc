@@ -107,42 +107,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Visa"
+                android:text="@string/visa_prep_item_label"
                 android:layout_marginTop="5dp"/>
             <CheckBox
                 android:id="@+id/hostingCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Accommodation"
+                android:text="@string/hosting_prep_item_label"
                 android:layout_marginTop="5dp"/>
             <CheckBox
                 android:id="@+id/transportCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Transfer / Transportation"
+                android:text="@string/transport_prep_item_label"
                 android:layout_marginTop="5dp"/>
             <CheckBox
                 android:id="@+id/luggageCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Luggage"
+                android:text="@string/luggage_prep_item_label"
                 android:layout_marginTop="5dp"/>
             <CheckBox
                 android:id="@+id/flightsCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Flight Tickets"
+                android:text="@string/flights_prep_item_label"
                 android:layout_marginTop="5dp"/>
             <CheckBox
                 android:id="@+id/restaurantCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Restaurant Reservation"
+                android:text="@string/restaurant_prep_item_label"
                 android:layout_marginTop="5dp"/>
             <Button
                 android:id="@+id/addTripPartButton"

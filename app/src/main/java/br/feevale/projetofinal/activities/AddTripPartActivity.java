@@ -98,8 +98,6 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         String collectionPathTripPart = "trip/" + tripId + "/tripparts";
-        //final String partId = db.collection(collectionPathTripPart).document().getId();
-        //final String collectionPathPrepItems = collectionPathTripPart + "/" + partId;
         AutoCompleteTextView city = findViewById(R.id.destinationSearchBar);
         CheckBox visaCheck = findViewById(R.id.visaCheck);
         CheckBox hostingCheck = findViewById(R.id.hostingCheck);
@@ -107,7 +105,6 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         CheckBox luggageCheck = findViewById(R.id.luggageCheck);
         CheckBox flightsCheck = findViewById(R.id.flightsCheck);
         CheckBox restaurantCheck = findViewById(R.id.restaurantCheck);
-        ArrayList<PreparationItem> items = new ArrayList<>();
         Map<String, Object> tripPart = new HashMap<>();
         tripPart.put("destination", city.getText().toString());
         tripPart.put("arrivaldate", arrivalDateView.getText().toString());
@@ -124,7 +121,7 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         Map<String, Object> prepItemHosting = new HashMap<>();
         prepItemHosting.put("cost", "0");
         prepItemHosting.put("status", "false");
-        prepItemHosting.put("name", visaCheck.getText().toString());
+        prepItemHosting.put("name", hostingCheck.getText().toString());
         if(hostingCheck.isChecked()){
             prepItemHosting.put("enabled", "true");
         }else{
@@ -133,7 +130,7 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         Map<String, Object> prepItemTransport = new HashMap<>();
         prepItemTransport.put("cost", "0");
         prepItemTransport.put("status", "false");
-        prepItemTransport.put("name", visaCheck.getText().toString());
+        prepItemTransport.put("name", transportCheck.getText().toString());
         if(transportCheck.isChecked()){
             prepItemTransport.put("enabled", "true");
         }else{
@@ -142,7 +139,7 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         Map<String, Object> prepItemLuggage = new HashMap<>();
         prepItemLuggage.put("cost", "0");
         prepItemLuggage.put("status", "false");
-        prepItemLuggage.put("name", visaCheck.getText().toString());
+        prepItemLuggage.put("name", luggageCheck.getText().toString());
         if(luggageCheck.isChecked()){
             prepItemLuggage.put("enabled", "true");
         }else{
@@ -151,7 +148,7 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         Map<String, Object> prepItemFlights = new HashMap<>();
         prepItemFlights.put("cost", "0");
         prepItemFlights.put("status", "false");
-        prepItemFlights.put("name", visaCheck.getText().toString());
+        prepItemFlights.put("name", flightsCheck.getText().toString());
         if(flightsCheck.isChecked()){
             prepItemFlights.put("enabled", "true");
         }else{
@@ -160,7 +157,7 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         Map<String, Object> prepItemRestaurant = new HashMap<>();
         prepItemRestaurant.put("cost", "0");
         prepItemRestaurant.put("status", "false");
-        prepItemRestaurant.put("name", visaCheck.getText().toString());
+        prepItemRestaurant.put("name", restaurantCheck.getText().toString());
         if(restaurantCheck.isChecked()){
             prepItemRestaurant.put("enabled", "true");
         }else{
