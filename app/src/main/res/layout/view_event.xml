@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/eventNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVENT"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/eventCategoryView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="14sp"
+        android:layout_below="@+id/eventNameView"/>
+    <LinearLayout
+        android:id="@+id/eventDateTimeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/eventCategoryView">
+        <TextView
+            android:id="@+id/eventDateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00/00/00"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/eventTimeFromView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/eventTimeToView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/eventProviderView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDateTimeLayout"
+        android:text="Place/Professional"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/eventLocationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventProviderView"
+        android:text="District"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/eventObservationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventLocationView"
+        android:text="Please attempt to"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/eventCostView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventObservationView"
+        android:text="$ 00"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/eventActionsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/eventCostView">
+        <ImageButton
+            android:id="@+id/eventEditButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mode_edit_green"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="16dp" />
+        <ImageButton
+            android:id="@+id/eventDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rubbish_bin"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="16dp" />
+    </LinearLayout>
+</RelativeLayout>

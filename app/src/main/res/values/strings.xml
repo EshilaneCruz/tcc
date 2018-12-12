@@ -70,4 +70,7 @@
     <string name="flights_prep_item_label">Flight Tickets</string>
     <string name="restaurant_prep_item_label">Restaurant Reservation</string>
 
+    <!--Strings for Events-->
+    <string name="events_title">Events</string>
+
 </resources>

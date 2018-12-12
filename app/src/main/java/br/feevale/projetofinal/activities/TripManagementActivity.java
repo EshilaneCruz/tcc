@@ -12,7 +12,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,7 +41,7 @@ public class TripManagementActivity extends AppCompatActivity{
         setContentView(R.layout.activity_trip_detail);
         db = FirebaseFirestore.getInstance();
         tripId = this.getIntent().getStringExtra("tripId");
-        loadUserTrip(tripId);
+        loadUserTrip();
         ImageButton editTripDetailsButton = findViewById(R.id.editTripDetailsButton);
         editTripDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +62,9 @@ public class TripManagementActivity extends AppCompatActivity{
         });
     }
 
-    private void loadUserTrip(final String id) {
+    private void loadUserTrip() {
         db.collection("trip")
-                .document(id)
+                .document(tripId)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
@@ -73,15 +76,15 @@ public class TripManagementActivity extends AppCompatActivity{
                                 trip.setTripStartDate(document.get("startdate").toString());
                                 trip.setTripEndDate(document.get("enddate").toString());
                                 trip.setTripBudget(document.get("budget").toString());
-                                loadTripParts(id);
+                                loadTripParts();
                                 setBasicDataOnScreen();
                         }
                     }
                 });
     }
 
-    private void loadTripParts(String id) {
-        String collectionPath = "trip/" + id + "/tripparts";
+    private void loadTripParts() {
+        String collectionPath = "trip/" + tripId + "/tripparts";
         db.collection(collectionPath)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -168,7 +171,13 @@ public class TripManagementActivity extends AppCompatActivity{
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //TODO DELETE PART FROM FIRESTORE
+                    String collectionPath = "trip/" + tripId + "/tripparts";
+                    db.collection(collectionPath).document(tripPart.getPartId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(TripManagementActivity.this, "Part removed successfully", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             });
 
