@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/name_event_label"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
             <EditText
                 android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/date_event_label"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
             <LinearLayout
                 android:id="@+id/dateLayout"
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/start_time_event_label"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
             <LinearLayout
                 android:id="@+id/startTimeLayout"
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/end_time_event_label"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
             <LinearLayout
                 android:id="@+id/endTimeLayout"
@@ -129,50 +129,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/prep_items_label"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
-            <CheckBox
-                android:id="@+id/visaCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/visa_prep_item_label"
-                android:layout_marginTop="5dp"/>
-            <CheckBox
-                android:id="@+id/hostingCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/hosting_prep_item_label"
-                android:layout_marginTop="5dp"/>
-            <CheckBox
-                android:id="@+id/transportCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/transport_prep_item_label"
-                android:layout_marginTop="5dp"/>
-            <CheckBox
-                android:id="@+id/luggageCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/luggage_prep_item_label"
-                android:layout_marginTop="5dp"/>
-            <CheckBox
-                android:id="@+id/flightsCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/flights_prep_item_label"
-                android:layout_marginTop="5dp"/>
-            <CheckBox
-                android:id="@+id/restaurantCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/restaurant_prep_item_label"
-                android:layout_marginTop="5dp"/>
+            <AutoCompleteTextView
+                android:id="@+id/partnerSearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
             <Button
                 android:id="@+id/addTripPartButton"
                 android:layout_width="280dp"
@@ -181,7 +143,8 @@
                 android:textColor="@android:color/white"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="25dp"
-                android:text="@string/add_trip_part_button"
+                android:text="@string/add_event_label_button"
+                android:contentDescription="@string/add_event_button_hint"
                 android:layout_gravity="center"/>
         </LinearLayout>
     </ScrollView>
