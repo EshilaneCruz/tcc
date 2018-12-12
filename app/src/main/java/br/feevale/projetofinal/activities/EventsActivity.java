@@ -1,5 +1,6 @@
 package br.feevale.projetofinal.activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +47,17 @@ public class EventsActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         loadEvents();
+
+        ImageButton addEventButton = findViewById(R.id.addEventButton);
+        addEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), AddEventActivity.class);
+                    intent.putExtra("partId", partId);
+                    intent.putExtra("tripId", tripId);
+                    startActivity(intent);
+            }
+        });
 
     }
 

@@ -71,6 +71,6 @@
     <string name="restaurant_prep_item_label">Restaurant Reservation</string>
 
     <!--Strings for Events-->
-    <string name="events_title">Events</string>
+    <string name="event_title">Events</string>
 
 </resources>
