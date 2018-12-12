@@ -128,7 +128,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/prep_items_label"
+                android:text="@string/provider_event_label"
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
             <AutoCompleteTextView

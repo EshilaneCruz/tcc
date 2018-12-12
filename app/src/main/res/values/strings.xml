@@ -74,13 +74,13 @@
     <string name="event_title">Events</string>
     <string name="addEvent_title">New Event</string>
     <string name="name_event_label">Name your event:</string>
-    <string name="start_time_event_label">Date:</string>
-    <string name="end_time_event_label">Starting hour:</string>
-    <string name="partner_event_label">Partner:</string>
-    <string name="location_event_label">Starting hour:</string>
-    <string name="observation_event_label">Starting hour:</string>
-    <string name="provider_event_label">Starting hour:</string>
-    <string name="date_event_label">Ending hour:</string>
+    <string name="start_time_event_label">Starting at:</string>
+    <string name="end_time_event_label">Ending at:</string>
+    <string name="partner_event_label">Search partner:</string>
+    <string name="location_event_label">District/Location Reference:</string>
+    <string name="observation_event_label">Don\'t forget:</string>
+    <string name="provider_event_label">Place/Professional:</string>
+    <string name="date_event_label">Date:</string>
     <string name="add_event_label_button">ADD EVENT</string>
     <string name="add_event_button_hint">Tap to add a event to your trip.</string>
 
