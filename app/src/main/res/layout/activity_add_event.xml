@@ -133,6 +133,7 @@
                 android:textColor="@color/colorPrimaryText"
                 android:text="@string/category_event_label" />
             <Spinner
+                android:id="@+id/event_category_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="25dp"/>

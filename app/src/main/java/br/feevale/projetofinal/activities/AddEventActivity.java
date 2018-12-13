@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.feevale.projetofinal.R;
 import br.feevale.projetofinal.dialogs.DatePickerFragment;
@@ -33,6 +35,7 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
 
     private FirebaseFirestore db;
     private ArrayList<String> partners = new ArrayList<>();
+    List<String> categories;
     private String tripId = "";
     private String partId = "";
     private Event event;
@@ -77,7 +80,9 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
             }
         });
 
-        loadPartners();
+        loadPartnersToAutoCompleteField();
+
+        loadCategoriesToSpinner();
 
         Button saveEventButton = findViewById(R.id.saveEventButton);
         saveEventButton.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +92,25 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
             }
         });
 
+    }
+
+    private void loadCategoriesToSpinner() {
+        db.collection("categories")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
+                                categories = (ArrayList<String>) document.get("name");
+                            }
+                            Spinner categorySpinner = findViewById(R.id.event_category_spinner);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<>(AddEventActivity.this, android.R.layout.simple_spinner_dropdown_item, categories);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            categorySpinner.setAdapter(adapter);
+                        }
+                    }
+                });
     }
 
     private void runDatePicker() {
@@ -101,7 +125,7 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
         timePickerFragment.show(ft, "timePicker");
     }
 
-    private void loadPartners() {
+    private void loadPartnersToAutoCompleteField() {
         db.collection("partners")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
