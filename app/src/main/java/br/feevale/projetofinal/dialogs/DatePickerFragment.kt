@@ -10,9 +10,6 @@ import java.util.*
 import android.content.DialogInterface
 
 
-
-
-
 class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     lateinit var c: Calendar

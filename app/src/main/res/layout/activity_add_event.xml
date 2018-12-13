@@ -122,21 +122,75 @@
                 <TextView
                     android:id="@+id/event_end_time_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/event_category_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/provider_event_label"
                 android:textSize="18sp"
-                android:textColor="@color/colorPrimaryText"/>
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/category_event_label" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="25dp"/>
+            <LinearLayout
+                android:id="@+id/partnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/provider_event_label"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimaryText"/>
+                <ImageButton
+                    android:id="@+id/partner_info_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_info"
+                    android:background="@android:color/transparent"
+                    android:layout_marginHorizontal="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    />
+            </LinearLayout>
             <AutoCompleteTextView
                 android:id="@+id/partnerSearchBar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/location_event_label"/>
+            <EditText
+                android:id="@+id/locationEventView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryText"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/cost_event_label"/>
+            <EditText
+                android:id="@+id/costEventView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:textColor="@color/colorPrimaryText"/>
             <Button
-                android:id="@+id/addTripPartButton"
+                android:id="@+id/saveEventButton"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:background="@color/colorAccent"
