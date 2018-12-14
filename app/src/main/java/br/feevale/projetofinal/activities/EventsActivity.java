@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -55,6 +56,7 @@ public class EventsActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), AddEventActivity.class);
                     intent.putExtra("partId", partId);
                     intent.putExtra("tripId", tripId);
+                    intent.putExtra("eventId", "");
                     startActivity(intent);
             }
         });
@@ -136,24 +138,23 @@ public class EventsActivity extends AppCompatActivity {
             eventEditButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(EventsActivity.this, "Open edit event", Toast.LENGTH_SHORT).show();
-                    /*Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddEventActivity.class);
                     intent.putExtra("eventId", event.getEventId());
                     intent.putExtra("partId", partId);
                     intent.putExtra("tripId", tripId);
-                    startActivity(intent);*/
+                    startActivity(intent);
                 }
             });
             eventDeleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /*String collectionPath = "trip/" + tripId + "/tripparts/" + partId + "/events";
+                    String collectionPath = "trip/" + tripId + "/tripparts/" + partId + "/events";
                     db.collection(collectionPath).document(event.getEventId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
-                        public void onSuccess(Void aVoid) {*/
+                        public void onSuccess(Void aVoid) {
                             Toast.makeText(EventsActivity.this, "Event removed successfully", Toast.LENGTH_SHORT).show();
-                        /*}
-                    });*/
+                        }
+                    });
                 }
             });
 

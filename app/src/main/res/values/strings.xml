@@ -85,6 +85,9 @@
     <string name="provider_event_label">Place/Professional</string>
     <string name="date_event_label">Date:</string>
     <string name="add_event_label_button">ADD EVENT</string>
+    <string name="edit_event_label_button">UPDATE EVENT</string>
     <string name="add_event_button_hint">Tap to add a event to your trip.</string>
-
+    <string name="tooltip_event_partner">Use one of our suggested partners or type complete service provider name of your convenience.</string>
+    <string name="understood">Got it!</string>
+    <string name="editEvent_title">Edit Event</string>
 </resources>

@@ -15,14 +15,13 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/navBarEventAddTitle"
+            android:id="@+id/navBarEventTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|center"
             android:layout_marginStart="15dp"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:text="@string/addEvent_title"/>
+            android:textSize="24sp" />
     </FrameLayout>
 
     <ScrollView
@@ -42,6 +41,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimaryText"/>
             <EditText
+                android:id="@+id/event_name_edit_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -136,7 +136,7 @@
                 android:id="@+id/event_category_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="25dp"/>
+                android:minHeight="30dp"/>
             <LinearLayout
                 android:id="@+id/partnerLayout"
                 android:layout_width="match_parent"
@@ -157,8 +157,7 @@
                     android:background="@android:color/transparent"
                     android:layout_marginHorizontal="20dp"
                     android:clickable="true"
-                    android:focusable="true"
-                    />
+                    android:focusable="true"/>
             </LinearLayout>
             <AutoCompleteTextView
                 android:id="@+id/partnerSearchBar"
@@ -190,6 +189,19 @@
                 android:textSize="20sp"
                 android:inputType="number"
                 android:textColor="@color/colorPrimaryText"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/observation_event_label"/>
+            <EditText
+                android:id="@+id/obsEventView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryText"/>
             <Button
                 android:id="@+id/saveEventButton"
                 android:layout_width="280dp"
@@ -198,7 +210,6 @@
                 android:textColor="@android:color/white"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="25dp"
-                android:text="@string/add_event_label_button"
                 android:contentDescription="@string/add_event_button_hint"
                 android:layout_gravity="center"/>
         </LinearLayout>
