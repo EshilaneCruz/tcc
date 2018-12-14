@@ -30,7 +30,8 @@
         <activity android:name=".activities.EventsActivity" />
         <activity android:name=".activities.AddTripPartActivity" />
         <activity android:name=".activities.EditPartActivity" />
-        <activity android:name=".activities.AddEventActivity"></activity>
+        <activity android:name=".activities.AddEventActivity" />
+        <activity android:name=".activities.CityDetailActivity"></activity>
     </application>
 
 </manifest>

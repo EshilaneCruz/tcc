@@ -90,4 +90,8 @@
     <string name="tooltip_event_partner">Use one of our suggested partners or type complete service provider name of your convenience.</string>
     <string name="understood">Got it!</string>
     <string name="editEvent_title">Edit Event</string>
+
+    <!--Strings for Destination-->
+    <string name="present_destination_title">DESTINATIONS</string>
+    <string name="navigate_destination_label">See all destinations:</string>
 </resources>
