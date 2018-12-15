@@ -92,6 +92,9 @@
     <string name="editEvent_title">Edit Event</string>
 
     <!--Strings for Destination-->
-    <string name="present_destination_title">DESTINATIONS</string>
-    <string name="navigate_destination_label">See all destinations:</string>
+    <string name="present_destination_title">Destinations</string>
+    <string name="destination_detail_title">City Information</string>
+    <string name="tourist_sites_label">Popular tourist spots:</string>
+    <string name="new_trip_part_dest_button_text">Add to trip</string>
+    <string name="add_city_to_trip_title">Choose a trip:</string>
 </resources>

@@ -74,7 +74,6 @@ public class PresentDestinationsActivity extends AppCompatActivity {
 
                             PresentDestinationsActivity.CityAdapter adapter = new PresentDestinationsActivity.CityAdapter();
                             listView.setAdapter( adapter );
-                            listView.setTextFilterEnabled(true);
                         }
                     }
                 });
