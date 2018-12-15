@@ -97,4 +97,7 @@
     <string name="tourist_sites_label">Popular tourist spots:</string>
     <string name="new_trip_part_dest_button_text">Add to trip</string>
     <string name="add_city_to_trip_title">Choose a trip:</string>
+    <string name="navbar_news_title">News\'n Promos</string>
+    <string name="news_text">Seems like we don\'t have a promo for you now :(</string>
+    <string name="news_text2">But come again soon to hear from our astonishing campaigns!</string>
 </resources>
