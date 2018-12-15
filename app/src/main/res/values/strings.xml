@@ -16,6 +16,7 @@
     <string name="familyName_hint">Family Name</string>
     <string name="cpf_hint">CPF</string>
     <string name="ask_cpf_link">Why do we ask for your CPF?</string>
+    <string name="tooltip_cpf">Your cpf is important for us to validate that you are a real person, so then we can guarantee the opinions we take come from real word.</string>
     <string name="city_of_residence_hint">City of residence</string>
     <string name="cellphone_hint">Cellphone number</string>
     <string name="birthdate_hint">Birth Date</string>

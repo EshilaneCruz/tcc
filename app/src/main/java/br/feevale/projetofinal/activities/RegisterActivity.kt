@@ -1,8 +1,10 @@
 package br.feevale.projetofinal.activities
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.widget.Toast
 import br.feevale.projetofinal.R
 import com.google.firebase.auth.FirebaseAuth
@@ -16,11 +18,23 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        whyAskForCpfButton.setOnClickListener { showInfo() }
         registerButton.setOnClickListener { registerNewAccount(emailEditTextRegister.text.toString(),
                 passwordEditTextRegister.text.toString(),
                 givenNameEditTextRegister.text.toString(),
                 familyNameEditTextRegister.text.toString(),
                 cpfEditTextRegister.text.toString()) }
+    }
+
+    private fun showInfo() {
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setMessage(R.string.tooltip_cpf)
+        alertDialogBuilder.setPositiveButton("Got it!"
+        ) { arg0, arg1 -> }
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 
     private val authClient: FirebaseAuth by lazy {
