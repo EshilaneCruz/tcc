@@ -48,7 +48,12 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_trip_part);
         db = FirebaseFirestore.getInstance();
-        tripId = this.getIntent().getStringExtra("tripId");
+        tripId = getIntent().getStringExtra("tripId");
+        String informedDestination = getIntent().getStringExtra("city");
+        if(informedDestination != null){
+            AutoCompleteTextView city = findViewById(R.id.destinationSearchBar);
+            city.setText(informedDestination);
+        }
         loadCities();
         arrivalDateView = findViewById(R.id.arrival_date_view);
         departureDateView = findViewById(R.id.departure_date_view);
@@ -169,6 +174,9 @@ public class AddTripPartActivity extends AppCompatActivity implements View.OnCli
         db.collection(collectionPathTripPart).add(tripPart).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
+                Intent intent = new Intent(getApplicationContext(), TripManagementActivity.class);
+                intent.putExtra("tripId", tripId);
+                startActivity(intent);
                 finish();
             }
         });

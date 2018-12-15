@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "45072081074-5n4ep9efdno2bbeb5ltbclf6nbbasefl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.feevale.projetofinal",
+            "certificate_hash": "fe702f2e2e043bef3097d90d625fcf64da90c2fb"
+          }
+        },
+        {
           "client_id": "45072081074-dk3pd1qrn98qk2ne7oksk9d6kk2f7j63.apps.googleusercontent.com",
           "client_type": 3
         }

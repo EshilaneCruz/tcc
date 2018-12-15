@@ -250,7 +250,6 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
         event.put("serviceprovider", partnersSearchView.getText().toString());
         event.put("startingtime", eventStartTimeView.getText().toString());
 
-
         String collectionPath = "trip/" + tripId + "/tripparts/" + partId + "/events";
         if(editing){
             db.collection(collectionPath).document(eventId).set(event).addOnSuccessListener(new OnSuccessListener<Void>() {
