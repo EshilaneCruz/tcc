@@ -48,7 +48,10 @@ class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener
                     "budget" to budget,
                     "owner" to firebaseAuth.currentUser?.email.toString())
             val tripId = FirebaseDatabaseService.firestoreDB.collection("trip").document()
-            tripId.set(tripInformation).addOnCompleteListener{ startActivity(Intent(this, TripManagementActivity::class.java).putExtra("tripId", tripId.id))}
+            tripId.set(tripInformation).addOnCompleteListener{
+                startActivity(Intent(this, TripManagementActivity::class.java).putExtra("tripId", tripId.id))
+                finish()
+            }
         }
     }
 
@@ -74,14 +77,14 @@ class StartTripActivity : AppCompatActivity(), DialogInterface.OnDismissListener
         startDate = SharedPreferencesService.retrieveString("DatePickerData")
         val date = dateformat.parse(startDate)
         startDateInMillis = date.time
-        start_date_view.setText(startDate)
+        start_date_view.text = startDate
     }
 
     private fun setEndDate() {
         endDate = SharedPreferencesService.retrieveString("DatePickerData")
         val date = dateformat.parse(endDate)
         endDateInMillis = date.time
-        end_date_view.setText(endDate)
+        end_date_view.text = endDate
     }
 
 }

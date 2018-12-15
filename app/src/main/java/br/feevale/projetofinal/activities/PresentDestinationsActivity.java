@@ -118,4 +118,9 @@ public class PresentDestinationsActivity extends AppCompatActivity {
             return result;
         }
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 }

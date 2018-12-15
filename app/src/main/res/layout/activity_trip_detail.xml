@@ -25,19 +25,6 @@
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:text="@string/editTrip_title"/>
-        <ImageButton
-            android:id="@+id/editTripDetailsButton"
-            android:contentDescription="@string/edit_trip_button_hint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_mode_edit"
-            android:paddingBottom="10dp"
-            android:paddingEnd="16dp"
-            android:paddingStart="16dp"
-            android:layout_gravity="bottom|end"
-            android:focusable="true"
-            android:clickable="true"/>
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"

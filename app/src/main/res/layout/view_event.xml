@@ -103,12 +103,5 @@
             android:src="@drawable/ic_mode_edit_green"
             android:background="@android:color/transparent"
             android:paddingHorizontal="16dp" />
-        <ImageButton
-            android:id="@+id/eventDeleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_rubbish_bin"
-            android:background="@android:color/transparent"
-            android:paddingHorizontal="16dp" />
     </LinearLayout>
 </RelativeLayout>

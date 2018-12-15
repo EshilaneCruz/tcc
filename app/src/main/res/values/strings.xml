@@ -56,6 +56,7 @@
     <string name="add_trip_part_button_hint">Tap to add a new part to your trip.</string>
 
     <string name="addTripPart_title">Add Part</string>
+    <string name="editTripPart_title">Edit Part</string>
     <string name="destination_label">Destination: </string>
     <string name="arrival_date_label">Arriving on: </string>
     <string name="departure_date_label">Leaving on: </string>
@@ -100,4 +101,7 @@
     <string name="navbar_news_title">News\'n Promos</string>
     <string name="news_text">Seems like we don\'t have a promo for you now :(</string>
     <string name="news_text2">But come again soon to hear from our astonishing campaigns!</string>
+
+    <!--Strings for Partners-->
+    <string name="navbar_partners_title">Partners</string>
 </resources>

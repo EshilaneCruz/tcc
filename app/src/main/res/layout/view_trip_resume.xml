@@ -25,13 +25,15 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="16dp"
         android:text="MON DD - MON DD"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="12sp" />
     <Button
         android:id="@+id/goToTripPageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tripPeriodView"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorAccent"
+        android:layout_alignBaseline="@+id/tripNameView"
         android:layout_alignEnd="@+id/tripPeriodView"
-        android:text="Ver Detalhes" />
+        android:text="Detalhes" />
 </RelativeLayout>

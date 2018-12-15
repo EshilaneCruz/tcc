@@ -71,7 +71,9 @@
                     android:id="@+id/event_date_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"/>
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -97,7 +99,9 @@
                     android:id="@+id/event_start_time_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"/>
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -122,7 +126,9 @@
                 <TextView
                     android:id="@+id/event_end_time_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"/>
             </LinearLayout>
 
             <TextView

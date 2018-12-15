@@ -1,6 +1,7 @@
 package br.feevale.projetofinal.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -255,6 +256,10 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
             db.collection(collectionPath).document(eventId).set(event).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
+                    Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
+                    intent.putExtra("partId", partId);
+                    intent.putExtra("tripId", tripId);
+                    startActivity(intent);
                     finish();
                 }
             });
@@ -262,6 +267,10 @@ public class AddEventActivity extends AppCompatActivity implements DialogInterfa
             db.collection(collectionPath).add(event).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
                 public void onSuccess(DocumentReference documentReference) {
+                    Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
+                    intent.putExtra("partId", partId);
+                    intent.putExtra("tripId", tripId);
+                    startActivity(intent);
                     finish();
                 }
             });

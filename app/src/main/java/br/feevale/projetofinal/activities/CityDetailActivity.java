@@ -98,7 +98,6 @@ public class CityDetailActivity extends AppCompatActivity {
                 String destination = city.getName() + " - " + city.getCountry();
                 intent.putExtra("city", destination);
                 startActivity(intent);
-                getParent().finish();
             }
         });
         AlertDialog alertDialog = alertDialogBuilder.create();

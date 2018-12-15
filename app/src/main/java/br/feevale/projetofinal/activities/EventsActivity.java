@@ -58,6 +58,7 @@ public class EventsActivity extends AppCompatActivity {
                     intent.putExtra("tripId", tripId);
                     intent.putExtra("eventId", "");
                     startActivity(intent);
+                    finish();
             }
         });
 
@@ -123,7 +124,6 @@ public class EventsActivity extends AppCompatActivity {
             TextView eventObservationView = result.findViewById( R.id.eventObservationView );
             TextView eventCostView = result.findViewById( R.id.eventCostView );
             ImageButton eventEditButton = result.findViewById( R.id.eventEditButton );
-            ImageButton eventDeleteButton = result.findViewById( R.id.eventDeleteButton );
 
             eventNameView.setText( event.getName() );
             eventCategoryView.setText( event.getCategory() );
@@ -143,21 +143,9 @@ public class EventsActivity extends AppCompatActivity {
                     intent.putExtra("partId", partId);
                     intent.putExtra("tripId", tripId);
                     startActivity(intent);
+                    finish();
                 }
             });
-            eventDeleteButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String collectionPath = "trip/" + tripId + "/tripparts/" + partId + "/events";
-                    db.collection(collectionPath).document(event.getEventId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(EventsActivity.this, "Event removed successfully", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            });
-
             return result;
         }
     }

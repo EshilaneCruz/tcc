@@ -42,17 +42,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_manage_trips -> {
                 goToPresentTrips()
             }
-            R.id.nav_update_profile -> {
-                goToProfile()
-            }
             R.id.nav_meet_partners -> {
                 goToPresentPartners()
             }
             R.id.nav_search_destinations -> {
                 goToPresentDestinations()
-            }
-            R.id.nav_settings -> {
-                goToSettings()
             }
             R.id.nav_logout -> {
                 FirebaseAuth.getInstance().signOut()
@@ -79,11 +73,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
     private fun goToPresentDestinations(){
         startActivity( Intent(this, PresentDestinationsActivity::class.java))
-    }
-    private fun goToProfile(){
-        startActivity( Intent(this, ProfileActivity::class.java))
-    }
-    private fun goToSettings(){
-        startActivity( Intent(this, SettingsActivity::class.java))
     }
 }

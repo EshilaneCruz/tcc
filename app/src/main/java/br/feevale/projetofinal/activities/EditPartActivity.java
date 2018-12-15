@@ -1,5 +1,6 @@
 package br.feevale.projetofinal.activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -375,6 +376,9 @@ public class EditPartActivity extends AppCompatActivity {
             db.collection(collectionPathTripPart).document(partId).set(tripPart, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
+                    Intent intent = new Intent(getApplicationContext(), TripManagementActivity.class);
+                    intent.putExtra("tripId", tripId);
+                    startActivity(intent);
                     finish();
                 }
             });

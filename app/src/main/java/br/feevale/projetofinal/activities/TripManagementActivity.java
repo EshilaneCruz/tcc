@@ -42,15 +42,7 @@ public class TripManagementActivity extends AppCompatActivity{
         db = FirebaseFirestore.getInstance();
         tripId = this.getIntent().getStringExtra("tripId");
         loadUserTrip();
-        ImageButton editTripDetailsButton = findViewById(R.id.editTripDetailsButton);
-        editTripDetailsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), EventsActivity.class);
-                intent.putExtra("tripId", tripId);
-                startActivity(intent);
-            }
-        });
+
         Button addTripPartButton = findViewById(R.id.addTripPartButton);
         addTripPartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +50,7 @@ public class TripManagementActivity extends AppCompatActivity{
                 Intent intent = new Intent(getApplicationContext(), AddTripPartActivity.class);
                 intent.putExtra("tripId", tripId);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -148,7 +141,6 @@ public class TripManagementActivity extends AppCompatActivity{
 
             ImageButton partEditButton = result.findViewById(R.id.partEditButton);
             ImageButton eventsEditButton = result.findViewById(R.id.eventsEditButton);
-            ImageButton deleteButton = result.findViewById(R.id.deletePartButton);
 
             partEditButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -157,6 +149,7 @@ public class TripManagementActivity extends AppCompatActivity{
                     intent.putExtra("partId", tripPart.getPartId());
                     intent.putExtra("tripId", tripId);
                     startActivity(intent);
+                    finish();
                 }
             });
             eventsEditButton.setOnClickListener(new View.OnClickListener() {
@@ -166,21 +159,9 @@ public class TripManagementActivity extends AppCompatActivity{
                     intent.putExtra("partId", tripPart.getPartId());
                     intent.putExtra("tripId", tripId);
                     startActivity(intent);
+                    finish();
                 }
             });
-            deleteButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String collectionPath = "trip/" + tripId + "/tripparts";
-                    db.collection(collectionPath).document(tripPart.getPartId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(TripManagementActivity.this, "Part removed successfully", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            });
-
             return result;
         }
     }
